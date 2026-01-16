@@ -1041,5 +1041,35 @@ a {
   height: auto;
   border-radius: 12px; /* optional */
 }
+/* =========================
+   MOBILE VIDEO AUTOPLAY FIX
+   ========================= */
+
+/* Remove iOS play button overlay */
+video {
+  pointer-events: none;              /* 🔥 MOST IMPORTANT */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  outline: none;
+  background: transparent;
+}
+
+/* Ensure inline playback on iOS */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+.home-illustration video {
+  width: 70%;
+}
+
 
 
