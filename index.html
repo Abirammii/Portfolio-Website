@@ -39,11 +39,18 @@
     
     <!-- Left: Illustration -->
     <div class="home-illustration">
-<video autoplay loop muted playsinline webkit-playsinline preload="auto">
-
-       style="border: 0 px solid black;">
+<video
+  autoplay
+  loop
+  muted
+  playsinline
+  webkit-playsinline
+  preload="auto"
+  style="border: 0 solid black;"
+>
   <source src="portfolio intro (1).mp4" type="video/mp4">
 </video>
+
 
     </div>
 
@@ -685,24 +692,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <script>
-  document.querySelectorAll("video").forEach(video => {
-    video.muted = true;
-    video.volume = 0;
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("video").forEach(video => {
+      video.muted = true;
+      video.volume = 0;
+    });
   });
 </script>
-  
-<script>
-  if (/iPhone|iPad|Android/i.test(navigator.userAgent)) {
-    document.querySelectorAll("video").forEach(v => {
-      v.muted = true;
-      v.volume = 0;
-    });
-  }
-</script>
+
 
 </body>
 
 </html>
+
 
 
 
