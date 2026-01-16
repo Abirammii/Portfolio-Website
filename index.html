@@ -684,10 +684,17 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", playIntroVideo);
 });
 </script>
+<script>
+  document.querySelectorAll("video").forEach(video => {
+    video.muted = true;
+    video.volume = 0;
+  });
+</script>
 
 </body>
 
 </html>
+
 
 
 
