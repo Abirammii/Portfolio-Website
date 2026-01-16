@@ -690,10 +690,20 @@ document.addEventListener("DOMContentLoaded", () => {
     video.volume = 0;
   });
 </script>
+  
+<script>
+  if (/iPhone|iPad|Android/i.test(navigator.userAgent)) {
+    document.querySelectorAll("video").forEach(v => {
+      v.muted = true;
+      v.volume = 0;
+    });
+  }
+</script>
 
 </body>
 
 </html>
+
 
 
 
