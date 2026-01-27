@@ -1072,30 +1072,3 @@ video::-webkit-media-controls-start-playback-button {
 }
 
 
-/* =========================
-   DESKTOP VIDEO / MOBILE IMAGE SWITCH
-   ========================= */
-
-/* Default: Desktop */
-.desktop-video {
-  display: block;
-}
-
-.mobile-image {
-  display: none;
-  width: 100%;
-  height: auto;
-}
-
-/* Mobile view */
-@media (max-width: 768px) {
-  .desktop-video {
-    display: none !important;
-  }
-
-  .mobile-image {
-    display: block !important;
-  }
-}
-
-
