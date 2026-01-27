@@ -653,7 +653,7 @@ var swiper = new Swiper(".mySwiper", {
 });
 </script>
 
-<script>
+  <script>
 document.addEventListener("DOMContentLoaded", () => {
 
   const projectSection = document.getElementById("projects");
@@ -663,16 +663,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let played = false;
 
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
   function playIntroVideo() {
     const rect = projectSection.getBoundingClientRect();
 
     if (rect.top < window.innerHeight * 0.6 && !played) {
       played = true;
 
-      // Hide cards
-      projectCards.classList.add("hidden");
+      /* ✅ MOBILE: skip video, show projects immediately */
+      if (isMobile()) {
+        projectCards.classList.remove("hidden");
+        videoBox.classList.add("hidden");
+        return;
+      }
 
-      // Show video
+      /* 💻 DESKTOP: play intro video */
+      projectCards.classList.add("hidden");
       videoBox.classList.remove("hidden");
 
       introVideo.play();
@@ -691,19 +700,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", playIntroVideo);
 });
 </script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("video").forEach(video => {
-      video.muted = true;
-      video.volume = 0;
-    });
-  });
-</script>
 
 
 </body>
 
 </html>
+
 
 
 
