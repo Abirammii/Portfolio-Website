@@ -1071,4 +1071,34 @@ video::-webkit-media-controls-start-playback-button {
   width: 70%;
 }
 
+/* =========================
+   MOBILE: HIDE ALL VIDEOS & IMAGES
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* Hide all videos */
+  video {
+    display: none !important;
+  }
+
+  /* Hide illustration images (hero, skills, education, achievements) */
+  .home-illustration,
+  .extra-video,
+  .education-illustration,
+  .extra-image-card {
+    display: none !important;
+  }
+}
+@media (max-width: 768px) {
+  .home-container {
+    gap: 20px;
+  }
+
+  section {
+    padding: 50px 16px;
+  }
+}
+
+
 
