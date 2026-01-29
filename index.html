@@ -648,58 +648,12 @@ var swiper = new Swiper(".mySwiper", {
 });
 </script>
 
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const projectSection = document.getElementById("projects");
-  const projectCards = document.getElementById("projectCards");
-  const videoBox = document.getElementById("projectIntroVideo");
-  const introVideo = document.getElementById("introVid");
-
-  let played = false;
-
-  function isMobile() {
-    return window.innerWidth <= 768;
-  }
-
-  function playIntroVideo() {
-    const rect = projectSection.getBoundingClientRect();
-
-    if (rect.top < window.innerHeight * 0.6 && !played) {
-      played = true;
-
-      /* ✅ MOBILE: skip video, show projects immediately */
-      if (isMobile()) {
-        projectCards.classList.remove("hidden");
-        videoBox.classList.add("hidden");
-        return;
-      }
-
-      /* 💻 DESKTOP: play intro video */
-      projectCards.classList.add("hidden");
-      videoBox.classList.remove("hidden");
-
-      introVideo.play();
-
-      introVideo.onended = () => {
-        videoBox.classList.add("fade-out");
-
-        setTimeout(() => {
-          videoBox.classList.add("hidden");
-          projectCards.classList.remove("hidden");
-        }, 600);
-      };
-    }
-  }
-
-  window.addEventListener("scroll", playIntroVideo);
-});
-</script>
-
+ 
 
 </body>
 
 </html>
+
 
 
 
